@@ -52,6 +52,26 @@ nav img {
     gap: 1.25rem;
 }
 
+.hero {
+    display: flex;
+    align-items: center;
+}
+
+.hero a {
+    width: 50%;
+    display: flex;
+    align-items: flex-end;
+}
+
+.hero a img {
+    width: 100%;
+}
+
+.hero img:hover {
+    transform: scale(1.05);
+    transition: 0.3s ease;
+}
+
 /* .maincontainer h1 {
     color: var(--primary);
     text-align: center;
@@ -87,26 +107,6 @@ img {
 .girl {
     height: 150px;
     width: 110px;
-}
-
-.hero {
-    display: flex;
-    align-items: center;
-}
-
-.hero a {
-    width: 50%;
-    display: flex;
-    align-items: flex-end;
-}
-
-.hero a img {
-    width: 100%;
-}
-
-.hero img:hover {
-    transform: scale(1.05);
-    transition: 0.3s ease;
 }
 
 .photo img {
