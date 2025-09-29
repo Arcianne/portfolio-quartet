@@ -1,0 +1,75 @@
+@import url('https://fonts.googleapis.com/css2?family=Waterfall&display=swap');
+
+body {
+    margin: 0;
+    background: #170035;
+    transition: opacity 1s ease-out;
+    
+}
+.background {
+    background: url(/assets/background.jpg) no-repeat center center;
+    background-size: cover;
+}
+
+h2 {
+    color: aliceblue;
+    font-size: 50px;
+    font-family: "Waterfall", cursive;
+    font-weight: 400;
+    display: flex;
+    justify-content: center;
+    margin: 1rem 0;
+    padding: 0;
+}
+
+.main-container {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    margin-top: 0;
+    flex-grow: 1;
+    padding: 1rem 0;
+}
+
+.image-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: auto;
+}
+
+img{
+    filter: grayscale(100%);
+    height: 90px;
+}
+
+img:hover {
+    filter: grayscale(0);
+    transition: 1s ease;
+}
+
+.image-container a:hover {
+    transform: scale(1.05);
+    transition: 0.7s ease;
+}
+
+.image-container img {
+    width: 20rem;
+    height: 35rem;
+}
+
+.zoom-fade {
+    max-width: 100%;
+    height: auto;
+    cursor: pointer;
+    transition: transform 0.3s ease, opacity 0.5s ease;
+}
+
+.zoomed {
+    transform: scale(1.1);
+    opacity: 0;
+}
+
+.fade-out {
+    opacity: 0;
+}
