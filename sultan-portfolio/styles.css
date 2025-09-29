@@ -176,3 +176,18 @@ h2 {
 .contact-card:hover {
     transform: translateY(-5px);
 }
+
+/* ===== Footer ===== */
+footer {
+    text-align: center;
+    padding: 1rem;
+    background: #5e1914;
+    color: #fff;
+    margin-top: 2rem;
+}
+
+footer a {
+    color: #f4a300;
+    text-decoration: none;
+    font-weight: bold;
+}
