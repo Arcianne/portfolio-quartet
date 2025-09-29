@@ -72,7 +72,7 @@ nav img {
     transition: 0.3s ease;
 }
 
-/* .maincontainer h1 {
+.maincontainer h1 {
     color: var(--primary);
     text-align: center;
 }
@@ -114,6 +114,7 @@ img {
     width: 23%;
 }
 
+/* 
 .photo {
     display: flex;
     justify-content: center;
