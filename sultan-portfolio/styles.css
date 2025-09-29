@@ -92,3 +92,31 @@ h2 {
     border: 5px solid #934529;
     flex-shrink: 0;
 }
+
+/* ===== Projects ===== */
+.projects {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+}
+
+.project-card {
+    background: #1a1a1a;
+    border: 2px solid #934529;
+    border-radius: 12px;
+    padding: 1.5rem;
+    box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.3);
+    transition: transform 0.2s;
+}
+
+.project-card:hover {
+    transform: scale(1.03);
+}
+
+.project-card a {
+    display: inline-block;
+    margin-top: 0.5rem;
+    text-decoration: none;
+    color: #f4a300;
+    font-weight: bold;
+}
