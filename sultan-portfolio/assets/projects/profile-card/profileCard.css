@@ -1,0 +1,77 @@
+body {
+    background-color: #D7CFC2; 
+    font-family: 'Lato', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.box {
+    background-color: #D1C4B1; 
+    width: 350px;
+    padding: 20px;
+    border: 1px solid #A68A76; 
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+    text-align: center;
+}
+
+h1 {
+    font-family: 'Playfair Display', serif; 
+    color: #3C2A25; 
+    font-size: 26px; 
+    font-weight: 700; 
+    font-variant: small-caps; 
+    margin-bottom: 5px; 
+}
+
+h3 {
+    color: #3C2A25; 
+    font-size: 16px;  
+    font-weight: 400; 
+    margin: 0;       
+    line-height: 1.2; 
+}
+
+p {
+    color: #4E3B35; 
+    font-size: 14px; 
+    font-weight: 400; 
+    margin: 5px 0; 
+}
+
+.profilePhoto {
+    width: 150px; 
+    height: auto; 
+    margin-bottom: 15px; 
+    border-radius: 50%; 
+    border: 2px solid #A68A76; 
+    padding: 3px; 
+    box-sizing: border-box; 
+}
+
+.quote {
+    font-style: italic; 
+    color: #4E3B35; 
+    margin: 10px 0; 
+}
+
+.info {
+    margin-top: 20px; 
+    text-align: left; 
+}
+
+.contact-info p {
+    display: flex; 
+    align-items: center; 
+    margin: 8px 0; 
+    color: #4E3B35; 
+}
+
+.icon {
+    width: 16px; 
+    height: auto; 
+    margin-right: 8px; 
+}
