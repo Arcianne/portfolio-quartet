@@ -120,3 +120,18 @@ h2 {
     color: #f4a300;
     font-weight: bold;
 }
+
+/* ===== Certificates ===== */
+.cert-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+.cert-grid img {
+    width: 100%;
+    border: 3px solid #934529;
+    border-radius: 8px;
+    background: #fff;
+}
