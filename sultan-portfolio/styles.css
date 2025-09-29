@@ -135,3 +135,44 @@ h2 {
     border-radius: 8px;
     background: #fff;
 }
+
+/* ===== Contact ===== */
+#contact a {
+    color: #f4a300;
+    font-weight: bold;
+}
+
+.contact-intro {
+    margin-bottom: 1.5rem;
+    font-style: italic;
+    color: #f5e6d3;
+    text-align: center;
+}
+
+/* Contact Cards */
+.contact-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+    gap: 1rem;
+    margin-bottom: 2rem;
+}
+
+.contact-card {
+    background: #1a1a1a;
+    border: 2px solid #934529;
+    border-radius: 10px;
+    padding: 1rem;
+    text-align: center;
+    transition: transform 0.3s;
+}
+
+.contact-card img.contact-icon {
+    width: 40px;
+    height: 40px;
+    object-fit: contain;
+    margin-bottom: 0.5rem;
+}
+
+.contact-card:hover {
+    transform: translateY(-5px);
+}
