@@ -1,0 +1,77 @@
+/* ===== Color Palette =====
+#1a1a1a (dark gray-black) 
+#3d2a26 (deep brown) 
+#5e1914 (dark red-brown) 
+#934529 (warm brown-orange) 
+#8b653a (earthy brown) 
+#666666 (gray) 
+*/
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Segoe UI", sans-serif;
+}
+
+/* ===== Body ===== */
+body {
+    background: #3d2a26;
+    color: #f5e6d3;
+    line-height: 1.6;
+}
+
+/* ===== Navbar ===== */
+header {
+    background: #5e1914;
+    padding: 1rem 2rem;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #f4a300;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 1.5rem;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #fff;
+    font-weight: 500;
+    transition: color 0.3s;
+}
+
+.nav-links a:hover {
+    color: #f4a300;
+}
+
+/* ===== Sections ===== */
+section {
+    padding: 3rem 2rem;
+    max-width: 900px;
+    margin: auto;
+}
+
+h2 {
+    color: #f4a300;
+    margin-bottom: 1rem;
+    font-size: 2rem;
+    border-bottom: 3px solid #934529;
+    display: inline-block;
+    padding-bottom: 0.3rem;
+    text-transform: uppercase;
+}
