@@ -1,0 +1,190 @@
+nav {
+    background-color: var(--bgcolor);
+}
+
+.items {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 80%;
+    margin: 0 auto;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+}
+
+.logo h1 {
+    text-align: center;
+    color: var(--header);
+}
+
+nav ul {
+    display: flex;
+    gap: 2rem;
+}
+
+nav ul li {
+    list-style-type: none;
+    color: var(--header);
+    font-size: 1.9rem;
+}
+
+nav img {
+    width: 70px;
+}
+
+.gallery {
+    font-size: 3rem;
+}
+
+.sub {
+    font-size: 2.5rem;
+    margin: 20px 0;
+}
+
+.maincontainer {
+    width: 80%;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 1.25rem;
+}
+
+/* .maincontainer h1 {
+    color: var(--primary);
+    text-align: center;
+}
+
+h2 {
+    text-align: center;
+    color: var(--title);
+}
+
+.container {
+    aspect-ratio: 1/1;
+    border: 3px solid plum;
+    border-radius: 15px;
+    display: grid;
+    place-content: center;
+    padding: 10px 0;
+}
+
+img {
+    width: 100%;
+}
+
+.maincontainer img:hover {
+    transform: scale(1.1);
+    transition: 0.3s ease;
+}
+
+.totoro img {
+    aspect-ratio: 1 / 1;
+}
+
+.girl {
+    height: 150px;
+    width: 110px;
+}
+
+.hero {
+    display: flex;
+    align-items: center;
+}
+
+.hero a {
+    width: 50%;
+    display: flex;
+    align-items: flex-end;
+}
+
+.hero a img {
+    width: 100%;
+}
+
+.hero img:hover {
+    transform: scale(1.05);
+    transition: 0.3s ease;
+}
+
+.photo img {
+    border-radius: 25%;
+    width: 23%;
+}
+
+.photo {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+}
+
+.facts-container {
+    margin-top: 3rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.facts-container .funfact {
+    background-color: #FFC1C1;
+    padding: 1rem;
+    border: 5px var(--title) solid;
+    border-radius: 0 0 10px 10px;
+}
+
+.fact h3{
+    text-align: center;
+    background-color: var(--bgcolor);
+    border: 5px var(--title) solid;
+    border-bottom: none;
+    border-radius: 10px 10px 0 0;
+    padding: 1rem;
+    font-size: 1.5rem;
+    color: var(--title);
+}
+
+.facts-container .fact ul li{
+    margin-left: 1.5rem;
+}
+
+.collab {
+    margin-top: 3rem;
+    align-items: center;
+}
+
+.description {
+    width: 30%;
+}
+
+.description p {
+    margin-top: .5rem;
+    color: var(--title);
+}
+
+.description h3{
+    color: var(--title);
+}
+
+.message {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.message p {
+    margin-left: 10px;
+    margin-bottom: 10px;
+    color: var(--title);
+}
+
+.message img {
+    margin-top: 5px;
+    margin-bottom: 5px;
+    width: 35px;
+}
+
+.index-foot {
+    margin: 0;
+} */
