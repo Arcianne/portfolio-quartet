@@ -34,7 +34,7 @@ nav ul li:hover,
     color: #6e4a2b;
 }
 
-/* footer {
+footer {
     width: 100%;
     background-color: var(--bgcolor);
     margin-top: 2.5rem;
@@ -100,4 +100,4 @@ footer ul {
 
 .foot img {
     width: 150px;
-} */
+}
