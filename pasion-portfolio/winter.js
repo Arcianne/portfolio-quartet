@@ -192,3 +192,176 @@ document.addEventListener('DOMContentLoaded', function() {
 // Basic error handling
 window.addEventListener('error', function(e) {
 });
+
+// GitHub API Integration
+async function fetchGitHubRepos() {
+    const username = 'siridc'; // Your GitHub username
+    const apiUrl = `https://api.github.com/users/${username}/repos?sort=updated&per_page=6`;
+    
+    try {
+        const response = await fetch(apiUrl);
+        if (!response.ok) throw new Error('Failed to fetch repositories');
+        
+        const repos = await response.json();
+        displayGitHubRepos(repos);
+    } catch (error) {
+        console.error('Error fetching GitHub repos:', error);
+        // Fallback to static projects if API fails
+    }
+}
+
+function displayGitHubRepos(repos) {
+    const projectsGrid = document.querySelector('.projects-grid');
+    if (!projectsGrid) return;
+    
+    // Clear existing projects (optional - or append after static ones)
+    // projectsGrid.innerHTML = '';
+    
+    repos.forEach((repo, index) => {
+        // Skip forked repos UNLESS you're a collaborator (have pushed commits)
+        // Uncomment the line below if you want to exclude ALL forks:
+        // if (repo.fork) return;
+        
+        const projectCard = document.createElement('div');
+        projectCard.className = 'project-card';
+        projectCard.style.animationDelay = `${index * 0.1}s`;
+        
+        // Get primary language color
+        const langColor = getLanguageColor(repo.language);
+        
+        projectCard.innerHTML = `
+            <a href="${repo.html_url}" target="_blank" rel="noopener noreferrer">
+                <div class="project-overlay">
+                    <h3>${repo.name.replace(/-/g, ' ')}</h3>
+                    <p>${repo.description || 'No description available'}</p>
+                    <div class="repo-stats">
+                        <span class="repo-stat">
+                            <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor">
+                                <path d="M8 .25a.75.75 0 01.673.418l1.882 3.815 4.21.612a.75.75 0 01.416 1.279l-3.046 2.97.719 4.192a.75.75 0 01-1.088.791L8 12.347l-3.766 1.98a.75.75 0 01-1.088-.79l.72-4.194L.818 6.374a.75.75 0 01.416-1.28l4.21-.611L7.327.668A.75.75 0 018 .25z"/>
+                            </svg>
+                            ${repo.stargazers_count}
+                        </span>
+                        <span class="repo-stat">
+                            <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor">
+                                <path d="M5 3.25a.75.75 0 11-1.5 0 .75.75 0 011.5 0zm0 2.122a2.25 2.25 0 10-1.5 0v.878A2.25 2.25 0 005.75 8.5h1.5v2.128a2.251 2.251 0 101.5 0V8.5h1.5a2.25 2.25 0 002.25-2.25v-.878a2.25 2.25 0 10-1.5 0v.878a.75.75 0 01-.75.75h-4.5A.75.75 0 015 6.25v-.878zm3.75 7.378a.75.75 0 11-1.5 0 .75.75 0 011.5 0zm3-8.75a.75.75 0 100-1.5.75.75 0 000 1.5z"/>
+                            </svg>
+                            ${repo.forks_count}
+                        </span>
+                        ${repo.language ? `
+                            <span class="repo-language" style="color: ${langColor}">
+                                <span class="lang-dot" style="background: ${langColor}"></span>
+                                ${repo.language}
+                            </span>
+                        ` : ''}
+                    </div>
+                </div>
+                <div class="project-placeholder github-repo-card" style="background: linear-gradient(135deg, #191970 0%, #4169E1 25%, #6A5ACD 50%, #9370DB 75%, #E6E6FA 100%)">
+                    ${repo.name}
+                </div>
+            </a>
+        `;
+        
+        projectsGrid.appendChild(projectCard);
+    });
+}
+
+// Language color mapping (GitHub colors)
+function getLanguageColor(language) {
+    const colors = {
+        'JavaScript': '#f1e05a',
+        'Python': '#3572A5',
+        'HTML': '#e34c26',
+        'CSS': '#563d7c',
+        'Java': '#b07219',
+        'PHP': '#4F5D95',
+        'Dart': '#00B4AB',
+        'C++': '#f34b7d',
+        'C#': '#178600',
+        'TypeScript': '#2b7489',
+        'Shell': '#89e051',
+        'Vue': '#41b883',
+        'React': '#61dafb'
+    };
+    return colors[language] || '#6A5ACD'; // Default to purple theme color
+}
+
+// Add CSS styles for repo stats (add to winter.css)
+const repoStatsStyles = `
+.repo-stats {
+    display: flex;
+    gap: 15px;
+    margin-top: 15px;
+    font-size: 0.9rem;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.repo-stat {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    color: rgba(255, 255, 255, 0.9);
+}
+
+.repo-stat svg {
+    width: 16px;
+    height: 16px;
+}
+
+.repo-language {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.lang-dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    display: inline-block;
+}
+
+.project-card {
+    animation: fadeInUp 0.6s ease-out forwards;
+    opacity: 0;
+}
+
+/* GitHub repo cards should match Project 3 & 4 colors */
+.github-repo-card {
+    background: linear-gradient(135deg, #191970 0%, #4169E1 25%, #6A5ACD 50%, #9370DB 75%, #E6E6FA 100%) !important;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+`;
+
+// Function to inject styles
+function injectRepoStyles() {
+    const styleElement = document.createElement('style');
+    styleElement.textContent = repoStatsStyles;
+    document.head.appendChild(styleElement);
+}
+
+// Initialize GitHub API on projects page
+function initGitHubAPI() {
+    // Check if we're on the projects page
+    if (document.querySelector('.projects-grid')) {
+        injectRepoStyles();
+        fetchGitHubRepos();
+    }
+}
+
+// Update the window load event listener
+var originalLoad = window.onload;
+window.onload = function() {
+    if (originalLoad) originalLoad();
+    initGitHubAPI();
+};
