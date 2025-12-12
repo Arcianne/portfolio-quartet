@@ -17,7 +17,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
       if (!formDataObj.name || !formDataObj.email || !formDataObj.message) {
         if (messageBox) {
-          messageBox.textContent = "⚠️ Please fill out ALL fields before sending.";
+          messageBox.textContent = "Please fill out ALL fields before sending.";
           messageBox.style.color = "red";
         } else {
           alert("Please fill out ALL fields before sending.");
@@ -34,7 +34,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
         if (resp.ok) {
           if (messageBox) {
-            messageBox.textContent = `✅ Thanks, ${formDataObj.name}! Your message has been sent.`;
+            messageBox.textContent = `Thanks, ${formDataObj.name}! Your message has been sent.`;
             messageBox.style.color = "green";
           } else {
             alert(`Thanks, ${formDataObj.name}! Your message has been sent.`);
@@ -42,7 +42,7 @@ document.addEventListener("DOMContentLoaded", () => {
           form.reset();
         } else {
           if (messageBox) {
-            messageBox.textContent = "❌ Oops! Something went wrong. Please try again later.";
+            messageBox.textContent = "Oops! Something went wrong. Please try again later.";
             messageBox.style.color = "red";
           } else {
             alert("Oops! Something went wrong. Please try again later.");
@@ -50,7 +50,7 @@ document.addEventListener("DOMContentLoaded", () => {
         }
       } catch (err) {
         if (messageBox) {
-          messageBox.textContent = "❌ Network error. Please try again later.";
+          messageBox.textContent = "Network error. Please try again later.";
           messageBox.style.color = "red";
         } else {
           alert("Network error. Please try again later.");
