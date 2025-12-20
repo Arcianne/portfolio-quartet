@@ -14,7 +14,6 @@
     font-family: "Segoe UI", sans-serif;
 }
 
-/* ===== Body ===== */
 body {
     background: #3d2a26;
     color: #f5e6d3;
@@ -93,6 +92,50 @@ h2 {
     flex-shrink: 0;
 }
 
+/* ===== QUOTE SECTION ===== */
+.quote-box {
+    background: #1a1a1a;
+    border: 2px solid #934529;
+    padding: 1.5rem;
+    margin-top: 1rem;
+    border-radius: 12px;
+    text-align: center;
+    box-shadow: 4px 4px 10px rgba(0,0,0,0.3);
+    height: 300px; 
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+#quote-text {
+    font-size: 1.2rem;
+    font-style: italic;
+    margin-bottom: 0.5rem;
+}
+
+#quote-source {
+    color: #f4a300;
+    font-weight: bold;
+    margin-bottom: 1rem;
+}
+
+#new-quote-btn {
+    background: #934529;
+    color: #fff;
+    border: none;
+    padding: 0.6rem 1.2rem;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: 0.3s;
+    align-self: center;
+}
+
+#new-quote-btn:hover {
+    background: #f4a300;
+    color: #3d2a26;
+}
+
 /* ===== Projects ===== */
 .projects {
     display: grid;
@@ -149,7 +192,6 @@ h2 {
     text-align: center;
 }
 
-/* Contact Cards */
 .contact-cards {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
