@@ -114,11 +114,17 @@ img {
     width: 23%;
 }
 
-
 .photo {
     display: flex;
     justify-content: center;
     gap: 2rem;
+}
+
+.discord {
+    margin-top: 3rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .facts-container {
