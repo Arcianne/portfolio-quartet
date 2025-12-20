@@ -195,7 +195,7 @@ window.addEventListener('error', function(e) {
 
 // GitHub API Integration
 async function fetchGitHubRepos() {
-    const username = 'siridc'; // Your GitHub username
+    const username = 'siridc';
     const apiUrl = `https://api.github.com/users/${username}/repos?sort=updated&per_page=6`;
     
     try {
@@ -206,27 +206,20 @@ async function fetchGitHubRepos() {
         displayGitHubRepos(repos);
     } catch (error) {
         console.error('Error fetching GitHub repos:', error);
-        // Fallback to static projects if API fails
     }
 }
 
 function displayGitHubRepos(repos) {
     const projectsGrid = document.querySelector('.projects-grid');
     if (!projectsGrid) return;
-    
-    // Clear existing projects (optional - or append after static ones)
-    // projectsGrid.innerHTML = '';
+
     
     repos.forEach((repo, index) => {
-        // Skip forked repos UNLESS you're a collaborator (have pushed commits)
-        // Uncomment the line below if you want to exclude ALL forks:
-        // if (repo.fork) return;
         
         const projectCard = document.createElement('div');
         projectCard.className = 'project-card';
         projectCard.style.animationDelay = `${index * 0.1}s`;
         
-        // Get primary language color
         const langColor = getLanguageColor(repo.language);
         
         projectCard.innerHTML = `
@@ -265,7 +258,6 @@ function displayGitHubRepos(repos) {
     });
 }
 
-// Language color mapping (GitHub colors)
 function getLanguageColor(language) {
     const colors = {
         'JavaScript': '#f1e05a',
@@ -282,10 +274,9 @@ function getLanguageColor(language) {
         'Vue': '#41b883',
         'React': '#61dafb'
     };
-    return colors[language] || '#6A5ACD'; // Default to purple theme color
+    return colors[language] || '#6A5ACD';
 }
 
-// Add CSS styles for repo stats (add to winter.css)
 const repoStatsStyles = `
 .repo-stats {
     display: flex;
@@ -343,23 +334,19 @@ const repoStatsStyles = `
 }
 `;
 
-// Function to inject styles
 function injectRepoStyles() {
     const styleElement = document.createElement('style');
     styleElement.textContent = repoStatsStyles;
     document.head.appendChild(styleElement);
 }
 
-// Initialize GitHub API on projects page
 function initGitHubAPI() {
-    // Check if we're on the projects page
     if (document.querySelector('.projects-grid')) {
         injectRepoStyles();
         fetchGitHubRepos();
     }
 }
 
-// Update the window load event listener
 var originalLoad = window.onload;
 window.onload = function() {
     if (originalLoad) originalLoad();
